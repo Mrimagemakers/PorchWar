@@ -13,3 +13,5 @@ The ten portrait images map to Becky, Ricky, Kevin, Lucy, Charlie, Debbie, Hank,
 Seven environment images guide six arenas; two are diner views. Their layout, lighting and surface details informed the 3D scenery. Small local image crops provide selected material textures. The arenas remain real-time 3D approximations, not exact photorealistic reconstructions.
 
 All art was supplied by the project owner. Source FBX files were not modified. No rights or licenses for redistributing those assets are asserted by this source repository. Three.js and its bundled addons retain their MIT license in `vendor/THREE-LICENSE.txt`.
+
+Photo reskins use front projection onto existing rigs. They are approximate and do not reconstruct photo-matching geometry. Environment references may be served from original Downloads images through ignored local-assets.json on this machine.

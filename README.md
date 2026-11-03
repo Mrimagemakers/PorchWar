@@ -33,3 +33,12 @@ Use a supported headset browser over HTTPS. Localhost is only for development on
 Run `npm run check` for syntax and eleven combat, progression, evidence and controller-input tests. A development harness also checked all thirty encounter transitions and the ten-clue ending with graphics mocked. All thirteen GLBs pass structural checks for skins, weights and required animation clips.
 
 Full campaign balance, controller hardware, VR hardware, exact portrait-matched 3D meshes, polished animation, multiplayer, advanced prop physics and production audio remain unfinished. User-supplied source files were not modified. The repository does not assert redistribution rights for the separate art pack.
+
+## Combat, navigation and stability update
+Shared-screen multiplayer: Local Duel, Team Brawl and Local Co-op. Online rooms, matchmaking and remote network synchronization are not implemented.
+Eight strikes include uppercut, body hook, leg sweep and two airborne kicks. Weapon reach/durability/recovery differ, with thrown weapons, named chains, health/grit pickups and temporary power. Story and one-on-one AI remain playable.
+Expanded town bounds, swept obstacle sliding, AI pathfinding, sprint, orbit/zoom camera and minimap. H opens the field guide.
+High is the default rendering preset. Ultra adds rendering detail within a 2.4-million-pixel limit; Performance reduces shadows and resolution. Inactive model cache entries are released, offscreen tabs pause, and graphics-context loss presents recovery. These safeguards reduce resource pressure but cannot guarantee that any GPU will never reset.
+The project remains a browser prototype; its assets and procedural animation do not match the visual or animation fidelity of Street Fighter or Mortal Kombat X. Photo reskins project front-view photos onto existing meshes, so silhouette and unseen surfaces remain approximate.
+Validation: 18 automated tests plus all 30 story encounters, ten clue pickups and final puzzle progression. Physical two-controller testing and long-session hardware testing remain outstanding.
+Local environment reference copies were deduplicated because C: filled completely. The ignored local-assets.json maps their exact URLs to original uploaded PNGs in Downloads. Keep those originals in place, or copy them back to references/ when packaging on another computer.

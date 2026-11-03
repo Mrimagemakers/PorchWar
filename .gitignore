@@ -6,3 +6,7 @@ portraits/*.png
 references/*.png
 source-assets.json
 work/
+
+local-assets.json
+
+upgrade-preview.png

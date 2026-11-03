@@ -1,0 +1,4 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {moves,weaponStats,combatOutcome} from './combat-moves.js';
+test('every move has a reachable active window before recovery',()=>{for(const m of Object.values(moves)){assert.ok(m.start<m.end&&m.end<=m.duration&&m.duration<=m.recovery);assert.ok(m.damage>0&&m.reach>0);}});
+test('team defeat waits for surviving teammates',()=>{const a=[{team:0,hp:0},{team:1,hp:0},{team:0,hp:35},{team:1,hp:50}];assert.equal(combatOutcome(a,20),null);a[3].hp=0;assert.equal(combatOutcome(a,20),'win');a[2].hp=0;assert.equal(combatOutcome(a,20),'draw');});
+test('heavy and long weapons trade recovery, reach and durability',()=>{assert.ok(weaponStats('Bathtub').speed>weaponStats('Pipe').speed);assert.ok(weaponStats('Pipe').reach>weaponStats('Hammer').reach);assert.ok(weaponStats('Pipe').durability>weaponStats('Bathtub').durability);});

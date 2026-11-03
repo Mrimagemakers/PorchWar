@@ -12,3 +12,25 @@
 .characterArt{display:flex;align-items:center;gap:14px;margin:12px 0}.characterArt img{width:68px;height:86px;object-fit:cover;object-position:50% 12%;border:1px solid #bda98188}.characterArt #bio{max-width:390px}.fightPortrait{width:45px;height:48px;object-fit:cover;object-position:50% 10%;vertical-align:middle;margin-right:10px;border:1px solid #c1b28c}main{margin-top:3vh}h1{font-size:clamp(60px,6vw,94px)}@media(max-height:800px){.characterArt img{width:48px;height:60px}.characterArt{margin:6px 0}main{margin-top:16px}}
 
 #controllerStatus{position:fixed;bottom:43px;left:24px;right:190px;color:#bfc5ae;font-size:8px;letter-spacing:.8px;z-index:4;pointer-events:none}button:focus-visible,select:focus-visible{outline:3px solid #ffbd6e;outline-offset:3px}@media(max-width:800px){#controllerStatus{bottom:36px;left:12px;font-size:7px;right:12px}}
+
+#minimap{position:fixed;right:24px;top:210px;z-index:3;border:1px solid #b6bca95c;pointer-events:none;border-radius:4px}@media(max-width:800px){#minimap{width:120px;height:99px;right:10px;top:170px}}
+
+#graphicsQuality{font-size:9px;padding:10px 12px;margin-left:auto;margin-right:12px}#sound{font-size:9px}header .edition{margin-right:20px}@media(max-width:800px){#graphicsQuality{font-size:8px;padding:9px 7px;margin-right:6px}#brand span{font-size:16px}header{padding:13px}}
+
+/* County championship interface */
+:root{--orange:#dfac66;--cream:#f4ede1;--ink:#101416}
+body{background:#101416}.grain{background:linear-gradient(90deg,#0c1115f5,#11181ed9 37%,#13191c11 76%),linear-gradient(0deg,#0c1115ee,transparent 40%)}
+header{background:#0c1115a8;border-color:#d9b57633;padding:20px 38px}#brand{font-style:italic;color:#e8bf82}#brand span{letter-spacing:4px}.eyebrow{color:#d8b57d;font-weight:700}
+h1{letter-spacing:-2px;text-shadow:0 6px 35px #0008}h1 em{background:linear-gradient(110deg,#f3dfb5,#b57b3a);background-clip:text;color:transparent}.intro{color:#c5c9cd}
+.mode{flex-wrap:wrap;gap:5px;max-width:590px}.mode button{font-size:9px;background:#121c23bb;border:1px solid #ab956640;padding:11px}.mode .selected{background:#d5ae7520;border-color:#d9b576;color:#f4d5a4}
+select{background:#111d27ee;border-color:#d7bb8055;border-radius:3px}.primary{background:linear-gradient(110deg,#edce97,#bc8b4d);color:#151a20;box-shadow:0 8px 24px #0005;letter-spacing:1.6px;border-radius:2px}
+.bar{height:18px;background:#111b24;border-color:#d3b17977}.bar i{background:linear-gradient(90deg,#b57942,#e5c78c)}.enemy .bar i{background:linear-gradient(90deg,#b95649,#e6a18c)}
+.healthRow b{text-shadow:0 3px 10px #000}.healthRow small{color:#dfcfb5}#timer{border-bottom:2px solid #d2ac70;padding:0 16px;color:#f6dfb6}
+#modal{background:#080e15ed;backdrop-filter:blur(10px)}#modal>div{background:linear-gradient(140deg,#182431,#0e171e);border:1px solid #c09d6155;box-shadow:0 25px 100px #000a;border-radius:5px}
+#teamStatus{margin-top:16px;color:#e7d1a9;font-size:10px;letter-spacing:1px;text-align:center}#navToggle{position:fixed;right:24px;bottom:100px;z-index:7;background:#101c29e8;border-color:#d2b683;font-size:10px}
+#navPanel{position:fixed;right:24px;top:100px;bottom:155px;width:min(390px,92vw);overflow:auto;z-index:9;background:linear-gradient(145deg,#1c2b3af5,#0c151ff5);border:1px solid #c3a57977;padding:26px;box-shadow:0 20px 70px #000b;border-radius:4px}
+#navPanel h2{font-size:36px;margin:14px 0}#navPanel p,#navPanel dd{font-size:11px;line-height:1.7;color:#c4cbd0}#navPanel dt{font-size:9px;color:#e9c68e;letter-spacing:1px;margin-top:10px}#navPanel dd{margin:3px 0 0}#navPanel small{font-size:10px;color:#e4bb7d}.mapLegend{border-top:1px solid #d3b47944;padding-top:12px}
+body.playing .grain{background:linear-gradient(0deg,#07101bb0,transparent 30%)}#minimap{background:#0b1722;border-color:#d2b68377;box-shadow:0 8px 30px #0006}
+@media(max-height:850px){h1{font-size:64px}.intro{font-size:11px}.mode{margin:10px 0}.characterArt{margin:6px 0}.meta{margin-top:10px}main{margin-top:16px}}@media(max-width:800px){#navPanel{right:10px;top:80px;bottom:180px}#navToggle{right:12px;bottom:145px}.mode button{font-size:8px;padding:8px}}
+
+header{gap:18px}#brand{white-space:nowrap}.edition{flex:1}#teamStatus{display:table;margin:16px auto 0;background:#101a25c9;padding:8px 12px;border:1px solid #cba66c44;line-height:1.6;text-shadow:0 1px 4px #000}#teamStatus:empty{display:none}@media(max-width:1000px){.edition{display:none}}
