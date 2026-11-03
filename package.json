@@ -1,0 +1,10 @@
+{
+  "name": "porch-war",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs",
+    "check": "node --check game.js && node --check characters.js && node --check reference-environments.js && node --test test.mjs gamepad.test.mjs"
+  }
+}

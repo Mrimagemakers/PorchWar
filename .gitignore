@@ -1,0 +1,8 @@
+node_modules/
+*.log
+*.zip
+models/rigged/
+portraits/*.png
+references/*.png
+source-assets.json
+work/
