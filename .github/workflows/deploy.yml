@@ -25,6 +25,18 @@ jobs:
       - uses: actions/configure-pages@v5
         with:
           enablement: true
+      - name: Restore published art pack
+        run: |
+          curl --fail --location --retry 3 -o /tmp/porch-art-0.zip https://github.com/Mrimagemakers/PorchWar/releases/download/v0.2-art/porch-art-0.zip
+          curl --fail --location --retry 3 -o /tmp/porch-art-1.zip https://github.com/Mrimagemakers/PorchWar/releases/download/v0.2-art/porch-art-1.zip
+          curl --fail --location --retry 3 -o /tmp/porch-art-2-models.zip https://github.com/Mrimagemakers/PorchWar/releases/download/v0.2-art/porch-art-2-models.zip
+          curl --fail --location --retry 3 -o /tmp/porch-art-portraits-web.zip https://github.com/Mrimagemakers/PorchWar/releases/download/v0.2-art/porch-art-portraits-web.zip
+          echo "320769fcc6cb2df8598ae4155d3b35c3f2b2f0ae87c42711ad17ef535d81be4a  /tmp/porch-art-0.zip" | sha256sum -c
+          echo "739eabaea47dc69db3b1e82de954fb5fc3b22bb4144ced13876d643c90309630  /tmp/porch-art-1.zip" | sha256sum -c
+          echo "3883f135a576e20c60686323b903a8014fbcb0c996f2e5f652a89bfe08049b28  /tmp/porch-art-2-models.zip" | sha256sum -c
+          echo "ac37d24d4d3acd91c76977cc137eb1b47bc6f0b60f966c1d5ea56fd07152c749  /tmp/porch-art-portraits-web.zip" | sha256sum -c
+          for part in /tmp/porch-art-*.zip; do unzip -o "$part"; done
+          test "$(find models/rigged -name '*.glb' | wc -l)" -eq 13
       - name: Package public game files
         run: |
           mkdir _site

@@ -9,7 +9,7 @@ import {updateCombat} from './combat-collision.js';
 import {GamepadInput} from './gamepad.js';
 const padInput=new GamepadInput(),padTwo=new GamepadInput(()=>Array.from(navigator.getGamepads?.()||[]).filter(p=>p?.index!==padInput.index));let secondPad={};let projectiles=[];let padState={x:0,z:0,block:false,pressed:[]},menuFocus=0;
 import {townLayout,sweepMove,smoothVelocity,findPath,safePosition,clearRoute} from './navigation.js';
-let layout=townLayout(0),cameraYaw=0,cameraZoom=11,mapClock=0;
+let layout=townLayout(0),cameraYaw=0,cameraZoom=11,mapClock=0,hudClock=0;
 import {setupGraphics} from './graphics.js';
 const $=id=>document.getElementById(id), clamp=T.MathUtils.clamp;
 let renderer;
@@ -95,7 +95,7 @@ for(let i=projectiles.length-1;i>=0;i--){const shot=projectiles[i];shot.life-=dt
 
 for(let i=snacks.length-1;i>=0;i--){const s=snacks[i];s.rotation.y+=dt;const collector=people.find(a=>a.hp>0&&(a.hp<100||!(a.buff>0))&&a.g.position.distanceTo(s.position)<.85);if(collector){collector.hp=Math.min(100,collector.hp+20);collector.buff=8;if(collector===p)grit=Math.min(100,grit+25);stage.remove(s);s.traverse(o=>o.geometry?.dispose());snacks.splice(i,1);if(collector===p)announce('SECOND WIND • +20 HP / +25 GRIT / 8s POWER',1.5);tone(440,.16);}}
 updateCombat(people,dt,resolveHit);
-if(noticeTime>0){noticeTime-=dt;if(noticeTime<=0)$('announcement').textContent='';}if(elapsed-lastHit>1.3)combo=0;hud();const result=combatOutcome(people,time);if(result)end(result);
+if(noticeTime>0){noticeTime-=dt;if(noticeTime<=0)$('announcement').textContent='';}if(elapsed-lastHit>1.3)combo=0;hudClock-=dt;if(hudClock<=0){hud();hudClock=.1;}const result=combatOutcome(people,time);if(result)end(result);
 updateCamera(dt);}
 else if(phase==='menu'){people.forEach(p=>updateCharacter(p,dt,false));people.forEach((p,i)=>p.arms.forEach((a,j)=>a.rotation.x=-.1+Math.sin(elapsed*1.5+i+j)*.08));}else if(renderer.xr.isPresenting){xrPaint-=dt;if(xrPaint<=0){paintXR();xrPaint=.15;}}
 for(let i=particles.length-1;i>=0;i--){const b=particles[i];b.life-=dt;b.v.y-=dt*9;b.m.position.addScaledVector(b.v,dt);if(b.life<=0){scene.remove(b.m);b.m.geometry.dispose();particles.splice(i,1);}}renderer.render(scene,camera);});
