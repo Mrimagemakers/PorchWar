@@ -49,3 +49,37 @@ body.playing #minimap{top:auto;bottom:185px}
 body:not(.has-pad).playing #controllerStatus{display:none}
 #announcement{letter-spacing:1px;text-transform:uppercase}
 @media(max-width:800px){body.playing #navToggle{right:12px;bottom:auto;top:62px}body.playing #minimap{bottom:auto;top:200px}}
+/* v0.4 arcade presentation */
+body.playing header,body.playing footer{display:none}
+body.playing #hud{inset:22px 4% 26px}
+#hud .healthRow{align-items:flex-start}
+#timer{min-width:92px;text-align:center;background:linear-gradient(180deg,#0d1620e6,#0d162099);border:1px solid #d2ac7066;border-bottom:3px solid #d2ac70;clip-path:polygon(10% 0,90% 0,100% 100%,0 100%);line-height:1.1;padding:4px 18px 6px}
+.bar{position:relative;overflow:hidden;height:22px;box-shadow:0 4px 18px #0008}
+.bar em{position:absolute;left:0;top:0;bottom:0;width:100%;background:#fff1cf;opacity:.85;transition:width .3s ease-out}
+.bar i{position:relative;box-shadow:inset 0 -6px 0 #0002,inset 0 3px 0 #fff3}
+.enemy .bar{transform:skewX(12deg)}
+.enemy .bar em,.enemy .bar i{margin-left:auto}
+.enemy .bar em{left:auto;right:0}
+.pips{display:flex;gap:7px;margin:4px 0 2px;min-height:12px}.enemy .pips{justify-content:flex-end}
+.pips i{width:12px;height:12px;transform:rotate(45deg);border:1.5px solid #e3c58f;background:#0b141c99}
+.pips i.won{background:#ffcf6a;box-shadow:0 0 10px #ffb43c}
+.fightPortrait{width:58px;height:58px;object-fit:cover;object-position:top;border:2px solid #d2ac70;box-shadow:0 6px 18px #000a;float:left;margin-right:12px}.enemy .fightPortrait{float:right;margin:0 0 0 12px}
+#banner{position:fixed;left:0;right:0;top:34%;z-index:6;text-align:center;pointer-events:none;font:italic 900 clamp(64px,11vw,170px)/1 'Barlow Condensed',Impact,sans-serif;letter-spacing:2px;color:#fff3dc;-webkit-text-stroke:3px #1a1208;text-shadow:0 8px 0 #1a1208,0 14px 40px #000c;opacity:0}
+#banner.show{animation:bannerIn 1.25s cubic-bezier(.2,1.4,.4,1) forwards}
+#banner.fight{color:#ffb35c;animation:bannerPunch .9s cubic-bezier(.2,1.6,.4,1) forwards}
+#banner.ko{color:#ff6b4a;animation:bannerKO 1.6s ease-out forwards}
+#banner.round{font-size:clamp(48px,7.5vw,120px)}
+@keyframes bannerIn{0%{opacity:0;transform:translateX(-18%) skewX(-12deg)}18%{opacity:1;transform:none}78%{opacity:1;transform:translateX(2%)}100%{opacity:0;transform:translateX(16%) skewX(10deg)}}
+@keyframes bannerPunch{0%{opacity:0;transform:scale(2.6)}22%{opacity:1;transform:scale(1)}70%{opacity:1;transform:scale(1.04)}100%{opacity:0;transform:scale(1.3)}}
+@keyframes bannerKO{0%{opacity:0;transform:scale(3) rotate(-6deg)}14%{opacity:1;transform:scale(1) rotate(-3deg)}20%{transform:translateX(-10px) rotate(-3deg)}26%{transform:translateX(8px) rotate(-3deg)}32%{transform:rotate(-3deg)}85%{opacity:1}100%{opacity:0;transform:scale(1.08) rotate(-3deg)}}
+body.playing.danger .grain{animation:danger 1.1s ease-in-out infinite;background:radial-gradient(ellipse at center,transparent 55%,#b0201880 100%)}
+@keyframes danger{50%{opacity:.45}}
+#pauseOptions{display:flex;gap:10px;justify-content:center;margin:0 0 18px}
+@media(min-width:801px){body.playing #minimap{bottom:150px}body.playing #navToggle{bottom:96px}}
+#hud #pause{bottom:50px}
+#hud #caseBoard{bottom:50px}
+@media(max-width:800px){body.playing #hud{inset:12px 12px 170px}.fightPortrait{width:40px;height:40px}#timer{font-size:38px;min-width:64px}}
+body.playing #announcement{top:25%;font-size:clamp(18px,2.4vw,34px)}
+#banner{top:38%}
+@media(max-width:800px){body.playing #navToggle{top:150px;right:12px;bottom:auto;padding:8px 10px;font-size:9px}body.playing #minimap{top:196px}}
+@media(max-width:800px){#hud .healthRow b{white-space:nowrap;font-size:18px}}

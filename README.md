@@ -50,3 +50,13 @@ Local environment reference copies were deduplicated because C: filled completel
 - **Combat feel.** Added hit-stop on impact, camera shake scaled to hit weight, red hit flashes, spark bursts, impact rings and floating damage numbers, plus synthesized swing, punch, heavy-hit, block and K.O. sounds. Sound is now on by default and the setting is remembered. Knockouts get a slow-motion **K.O.!** beat before the result screen.
 - **Camera and HUD.** The fight camera frames the fighters closer. The VR button only appears on headsets that support it, the field guide no longer covers Pause during play, the minimap moved below the health bars, and the controller hint hides until a pad connects.
 - **Flea Market Ferris wheel.** The supplied `FerrisWheel.obj` (21 MB) was converted and simplified to `models/props/ferris-wheel.glb` (355 KB). It turns slowly behind the stalls, and its gondolas stay level.
+
+## v0.4 arcade update
+- **Best-of-three rounds.** One on One and Local Duel are now best of three, with round pips under each health bar, a FINAL ROUND call at one-all and the round score on the result screen. Story, Team Brawl and Co-op keep their existing flow.
+- **Fight intros.** Every fight and story encounter opens with a sweeping camera, a ROUND / ENCOUNTER / BOSS FIGHT call and a FIGHT! stinger with its own sound. Controls unlock when FIGHT! lands.
+- **Knockouts.** Big K.O.! and TIME! banners, and the camera slowly circles the fighters during the slow-motion beat.
+- **Arcade HUD.** The site header and key strip hide during play so the arena fills the screen. Health bars are thicker and mirrored, with a trailing damage bar that drains after each hit, framed portraits and a framed timer. The screen edges pulse red when you're under 25% health.
+- **Sky.** A gradient sky with sun glow replaces the flat background colour, with stars over the night arenas.
+- **Pause menu.** Sound and graphics settings moved into the pause screen; M toggles sound at any time.
+- **Hosted arenas look finished.** When the environment reference photos aren't present (as on GitHub Pages), those surfaces now get generated textures instead of flat colour.
+- Phone layout fixes for the field guide button and minimap. 21 automated checks, including new round-scoring tests.

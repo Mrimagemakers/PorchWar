@@ -1,10 +1,10 @@
 {
   "name": "porch-war",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "private": true,
   "type": "module",
   "scripts": {
     "start": "node server.mjs",
-    "check": "node --check game.js && node --check characters.js && node --check photo-reskins.js && node --check graphics.js && node --check reference-environments.js && node --test test.mjs gamepad.test.mjs navigation.test.mjs combat-moves.test.mjs"
+    "check": "node --check game.js && node --check characters.js && node --check photo-reskins.js && node --check graphics.js && node --check reference-environments.js && node --test test.mjs gamepad.test.mjs navigation.test.mjs combat-moves.test.mjs rounds.test.mjs"
   }
 }

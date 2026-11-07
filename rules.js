@@ -18,3 +18,5 @@ export const weapons=['Stool','Bathtub','Trash can','Pipe','Hammer','Wrench','Sa
 export function damage({kind,power=1,level=1,weapon=false,blocked=false,combo=1}){return Math.round(({punch:8,kick:12,special:27}[kind]||8)*power*(1+(level-1)*.07)*(weapon?1.45:1)*(combo>=3?1.3:1)*(blocked?.22:1));}
 export function outcome(player,enemy,time){if(player<=0&&enemy<=0)return'draw';if(enemy<=0)return'win';if(player<=0)return'lose';if(time<=0)return player===enemy?'draw':player>enemy?'win':'lose';return null;}
 export function levelFor(xp){return Math.min(20,1+Math.floor(xp/300));}
+// Best-of-three round scoring for one-on-one modes. A drawn round counts for both fighters.
+export function scoreRound(wins,result,needed=2){const next=[...wins];if(result==='win')next[0]++;else if(result==='lose')next[1]++;else{next[0]++;next[1]++;}const over=Math.max(...next)>=needed;return{wins:next,over,result:over?(next[0]>next[1]?'win':next[0]<next[1]?'lose':'draw'):null};}
