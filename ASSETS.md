@@ -15,3 +15,5 @@ Seven environment images guide six arenas; two are diner views. Their layout, li
 All art was supplied by the project owner. Source FBX files were not modified. No rights or licenses for redistributing those assets are asserted by this source repository. Three.js and its bundled addons retain their MIT license in `vendor/THREE-LICENSE.txt`.
 
 Photo reskins use front projection onto existing rigs. They are approximate and do not reconstruct photo-matching geometry. Environment references may be served from original Downloads images through ignored local-assets.json on this machine.
+
+**v0.3:** Web-optimized copies of the thirteen character GLBs (13 MB total) and the converted Ferris wheel prop are now committed under `models/`. The original full-size GLBs are still in the v0.2-art release. Only the portrait pack and environment references remain external. The `.max` rig pack (people_freePack) is in 3ds Max format, which can't be opened outside 3ds Max. It needs exporting to FBX before it can join the roster.

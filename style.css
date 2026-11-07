@@ -34,3 +34,18 @@ body.playing .grain{background:linear-gradient(0deg,#07101bb0,transparent 30%)}#
 @media(max-height:850px){h1{font-size:64px}.intro{font-size:11px}.mode{margin:10px 0}.characterArt{margin:6px 0}.meta{margin-top:10px}main{margin-top:16px}}@media(max-width:800px){#navPanel{right:10px;top:80px;bottom:180px}#navToggle{right:12px;bottom:145px}.mode button{font-size:8px;padding:8px}}
 
 header{gap:18px}#brand{white-space:nowrap}.edition{flex:1}#teamStatus{display:table;margin:16px auto 0;background:#101a25c9;padding:8px 12px;border:1px solid #cba66c44;line-height:1.6;text-shadow:0 1px 4px #000}#teamStatus:empty{display:none}@media(max-width:1000px){.edition{display:none}}
+
+/* v0.3 polish: impact numbers, tidy HUD stacking, VR entry placement */
+.damage{position:fixed;z-index:6;pointer-events:none;transform:translate(-50%,-50%);font:900 30px 'Barlow Condensed',Impact,sans-serif;color:#ffe2a6;text-shadow:0 2px 0 #6b2a12,0 0 14px #ff8a3c99;animation:dmgRise .8s ease-out forwards}
+.damage.heavy{font-size:44px;color:#fff1cf;text-shadow:0 3px 0 #7a1f0e,0 0 22px #ff6a2ccc}
+.damage.blocked{font-size:20px;letter-spacing:2px;color:#cfe3ff;text-shadow:0 2px 0 #1d2c3d}
+@keyframes dmgRise{0%{opacity:0;transform:translate(-50%,-30%) scale(.6)}12%{opacity:1;transform:translate(-50%,-60%) scale(1.15)}100%{opacity:0;transform:translate(-50%,-190%) scale(1)}}
+.vrButton{left:auto!important;right:24px!important;bottom:150px!important;width:150px!important;z-index:7!important}
+body.playing .vrButton{bottom:auto!important;top:96px!important}
+.sceneTag{bottom:24%}
+body.playing #navToggle{right:calc(5% + 150px);bottom:125px;padding:12px 18px;font-size:11px}
+body.playing header .edition{visibility:hidden}
+body.playing #minimap{top:auto;bottom:185px}
+body:not(.has-pad).playing #controllerStatus{display:none}
+#announcement{letter-spacing:1px;text-transform:uppercase}
+@media(max-width:800px){body.playing #navToggle{right:12px;bottom:auto;top:62px}body.playing #minimap{bottom:auto;top:200px}}
